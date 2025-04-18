@@ -4,7 +4,8 @@ namespace ShoppingBasketDiscount.Domain.Discount;
 public class Descuento
 {
     public static double AplicarDescuento(double Total, double Dto)
-    => Math.Round(Total - (Total * Dto), 2);
+    //=> Math.Round(Total - (Total * Dto), 2); //Total Compra - Descuento
+    => (Total* Dto);//Descuento aplicado
 
 
     public static double ObtenerDescuento(double totalCompra)

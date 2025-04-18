@@ -15,7 +15,7 @@ public class AgregarProductoHandler(IEventStore eventStore) : ICommandHandler<Ag
 
         eventStore.AppendEvent(command.IdCompra, crearProducto);
 
-        double totalCompra = compra.TotalCompra + (command.Cantidad * valorProducto);
+        double totalCompra = compra.TotalCompra() + (command.Cantidad * valorProducto);
 
         double dto = Descuento.ObtenerDescuento(totalCompra);
 
